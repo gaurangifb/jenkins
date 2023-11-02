@@ -8,29 +8,31 @@ pipeline{
             
         }
         stage("run a command"){
-            steps{
-                sh 'pwd'
+            steps {
+                bat 'cd'
             }
             
         }
-        stage("run multiple command"){
-            steps{
-                sh '''pwd
-                ls
-                date 
-                cat'''
-            }
-            
+       stage("run multiple commands") {
+        steps {
+            bat """
+            echo %CD%
+            dir
+            date /t
+            type
+            """
+        }
+}
         }
         stage("D"){
             steps{
-                echo "========executing A========"
+                echo "========executing D========"
             }
             
         }
         stage("E"){
             steps{
-                echo "========executing A========"
+                echo "========executing E========"
             }
             
         }
