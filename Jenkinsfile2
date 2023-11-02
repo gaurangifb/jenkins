@@ -3,36 +3,34 @@ pipeline{
     stages{
         stage("echo a line"){
             steps{
-                echo "this is message one"
+                echo 'this is step one'
             }
             
         }
         stage("run a command"){
             steps{
-                sh pwd
+                sh 'pwd'
             }
             
         }
-        stage("run multiple commands"){
+        stage("run multiple command"){
             steps{
-                bat '''
-                cd
+                sh '''pwd
                 ls
-                dir
-                date /t
-                '''
+                date 
+                cat'''
             }
             
         }
         stage("D"){
             steps{
-                echo "========executing D========"
+                echo "========executing A========"
             }
             
         }
         stage("E"){
             steps{
-                echo "========executing E========"
+                echo "========executing A========"
             }
             
         }
