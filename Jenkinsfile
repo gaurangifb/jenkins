@@ -9,15 +9,14 @@ jpipeline {
         choice(name: 'City', choices: ['Jaipur','Mumbai','Pune' ], description: "")
     }
     stages {
-        stage('Run A command') {
+        stage('Run a command') {
             steps {
-                sh '''
-                ls
-                date
-                pwd
-                cal 2021
+                bat '''
+                dir
+                date /t
+                cd
+                echo %DATE%
                 '''
-                
             }
         }
         stage('Environment Variables') {
